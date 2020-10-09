@@ -15,6 +15,6 @@ if __name__ == '__main__':
 
     print("hello_Charger_its_me")
     print("bla")
-    print("bla")dd
+    print("bla")
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
