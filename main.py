@@ -17,5 +17,6 @@ if __name__ == '__main__':
     print("bla")
     print("bla")
     print("blu")
+    print("blx")
 
 # See PyCharm help at https://www.jetbrains.com/help/pycharm/
