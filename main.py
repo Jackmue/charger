@@ -5,17 +5,17 @@ if __name__ == '__main__':
     #drone flight
     print("drone landed")
 
+    init_motors()
+    #exit(0)
+
     sleighs_forward()
     print("sleighs kissed the Drone")
+    charge()
+    switch()
     sleighs_backward()
     #Drone getting charged
     print("drone ready to fly")
 
 
     print("hello_Charger_its_me")
-    print("bla")
-    print("bla")
-    print("blu")
-    print("blx")
-    print("new")
     exit(0)

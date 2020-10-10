@@ -13,7 +13,32 @@ def convert_to_go_code(x, y, z, speed, pad):
 def angle_maker(angle):
     command_str = "ccw " + str(angle)
     return command_str
+x1 = 0
+y1 = 0
+z1 = 150
+speed1 = 20
+x2 = 100
+y2 = 0
+z2 = 150
+speed2 = 100
+angle = 180
 
+
+tello = Tello()
+
+tello.send_command("command")
+tello.send_command("takeoff")
+tello.send_command("mon")
+tello.send_command(convert_to_go_code(x1, y1, z1, speed1, 1))
+tello.send_command(convert_to_go_code(x2, y2, z2, speed2, 1))
+tello.send_command(angle_maker(angle))
+tello.send_command(convert_to_go_code(x1, y1, z1, speed1, 2))
+tello.send_command(convert_to_go_code(x2, y2, z2, speed2, 2))
+tello.send_command(angle_maker(angle))
+tello.send_command(convert_to_go_code(x1, y1, z1, speed1, 1))
+tello.send_command(convert_to_go_code(0, 0, 40, speed2, 1))
+tello.send_command("land")
+exit(0)
 
 x1 = 0
 y1 = 0

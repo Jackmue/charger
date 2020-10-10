@@ -36,6 +36,11 @@ print(kit.motor3)
 # finally:  # unlock the i2c bus when ctrl-c'ing out of the loop
 #     i2c.unlock()
 
+def init_motors():
+    kit.motor1.throttle = 0
+    kit.motor2.throttle = 0
+
+
 def sleighs_forward():
     kit.motor1.throttle = 1
     while True:
@@ -47,14 +52,32 @@ def sleighs_forward():
             print("low")
 
     kit.motor1.throttle = 0
-    kit.motor3.throttle = 1
+    kit.motor2.throttle = 1
     while True:
         if GPIO.input(23):
             print("moin")
+            kit.motor2.throttle = -1
+            time.sleep(1)
             break
         else:
             print("Tschüss")
-    kit.motor3.throttle = 0
+    kit.motor2.throttle = 0
+
+def charge():
+    time.sleep(15)
+
+def switch():
+    kit.motor2.throttle = 1
+    while True:
+        if GPIO.input(23):
+            print("moin")
+            kit.motor2.throttle = -1
+            time.sleep(1)
+            break
+        else:
+            print("Tschüss")
+    kit.motor2.throttle = 0
+
 
 def sleighs_backward():
     kit.motor1.throttle = -1
@@ -65,14 +88,14 @@ def sleighs_backward():
         else:
             print("stop")
     kit.motor1.throttle = 0
-    kit.motor3.throttle = -1
+    kit.motor2.throttle = -1
     while True:
         if GPIO.input(16):
             print("back2")
             break
         else:
             print("stop2")
-    kit.motor3.throttle = 0
+    kit.motor2.throttle = 0
 
 def switch_on():
     print("Im soon going to switch on")
