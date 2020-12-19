@@ -1,17 +1,21 @@
-# Drone-Charger
+from motor_control import *
 
-import drone_control
-
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
-
-
-# Press the green button in the gutter to run the script.
 if __name__ == '__main__':
-    print_hi('PyCharm')
+    print('Hi this is start')
+    #drone flight
+    print("drone landed")
+
+    sleighs_forward()
+    print("sleighs kissed the Drone")
+    sleighs_backward()
+    #Drone getting charged
+    print("drone ready to fly")
+
 
     print("hello_Charger_its_me")
-
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    print("bla")
+    print("bla")
+    print("blu")
+    print("blx")
+    print("new")
+    exit(0)
