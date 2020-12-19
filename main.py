@@ -12,6 +12,7 @@ if __name__ == '__main__':
     #Drone getting charged
     print("drone ready to fly")
 
+
     print("hello_Charger_its_me")
     print("bla")
     print("bla")
@@ -19,5 +20,3 @@ if __name__ == '__main__':
     print("blx")
     print("new")
     exit(0)
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
