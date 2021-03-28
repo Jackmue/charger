@@ -39,9 +39,46 @@ print(kit.motor3)
 def init_motors():
     kit.motor1.throttle = 0
     kit.motor2.throttle = 0
+    return None
+
+def init_sleighs():
+    kit.motor2.throttle = 1
+    time.sleep(1)
+    kit.motor2.throttle = -1
+    while True:
+        if GPIO.input(16):
+            print("moin")
+            kit.motor2.throttle = 0
+            break
+        else:
+            print("Tschüss")
+    kit.motor2.throttle = 0
+    kit.motor1.throttle = 1
+    time.sleep(1)
+    kit.motor1.throttle = -1
+    while True:
+        if GPIO.input(25):
+            print("moin")
+            kit.motor1.throttle = 0
+            break
+        else:
+            print("Tschüss")
+    kit.motor1.throttle = 0
+    return None
 
 
 def sleighs_forward():
+    kit.motor2.throttle = 1
+    time.sleep(5)
+    kit.motor2.throttle = -1
+    while True:
+        if GPIO.input(16):
+            print("back2")
+            break
+        else:
+            print("stop2")
+    kit.motor2.throttle = 0
+
     kit.motor1.throttle = 1
     while True:
 
@@ -62,9 +99,11 @@ def sleighs_forward():
         else:
             print("Tschüss")
     kit.motor2.throttle = 0
+    return None
 
 def charge():
     time.sleep(15)
+    return None
 
 def switch():
     kit.motor2.throttle = 1
@@ -77,6 +116,7 @@ def switch():
         else:
             print("Tschüss")
     kit.motor2.throttle = 0
+    return None
 
 
 def sleighs_backward():
@@ -96,6 +136,8 @@ def sleighs_backward():
         else:
             print("stop2")
     kit.motor2.throttle = 0
+    return None
 
 def switch_on():
     print("Im soon going to switch on")
+    return None
